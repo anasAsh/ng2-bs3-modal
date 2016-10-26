@@ -61,6 +61,10 @@ export class ModalInstance {
     }
 
     private init() {
+        if (!jQuery) {
+            console.warn('jQuery is required to run this module.');
+            return;
+        }
         this.$modal = jQuery(this.element.nativeElement);
         this.$modal.appendTo('body');
 
